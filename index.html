@@ -9,29 +9,31 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
   <div class='container'>
-    <h1 id="title">Formulario de encuesta FreeCodeCamp</h1>
-    <p id="description">Thank you for taking the time to help us improve the platform</p>
+    <div class='descriptionBox'>
+      <h1 id="title">Formulario de encuesta FreeCodeCamp</h1>
+      <p id="description">Valoramos su colaboración, todos los comentarios son tenidos en cuenta y nos ayudan a mejorar nuestros servicios.</p>
+    </div>
     <form id="survey-form" action="">
 
       <div class="mb-3">
         <label id="name-label" for="name" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="name" placeholder="Indique su nombre">
+        <input type="text" class="form-control" id="name" placeholder="Indique su nombre" required>
       </div>
 
       <div class="mb-3">
         <label id="email-label" for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        <input type="email" class="form-control" id="email" placeholder="name@example.com" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required>
       </div>
 
       <div class="mb-3">
-        <label id="number-label" for="edad" class="form-label">Edad</label>
-        <input type="number" class="form-control" id="edad" min="18" max="110" placeholder="Indique un número entero">
+        <label id="number-label" for="number" class="form-label">Edad</label>
+        <input type="number" class="form-control" id="number" min="18" max="110" placeholder="Indique un número entero">
       </div>
 
       <select id="dropdown" class="form-select mb-3" aria-label="Default select example">
@@ -45,33 +47,55 @@
       </select>
 
       <div class="mb-3">
-        <p>¿Tiene usted alguna inclinación religiosa?</p>
+        <p>Nivel académico</p>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="religion" id="flexRadioDefault1">
-          <label class="form-check-label" for="flexRadioDefault1">Soy católico</label>
+          <input class="form-check-input" type="radio" name="academico" id="bachiller" value="Bachiller">
+          <label class="form-check-label" for="bachiller">Bachiller</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="religion" id="flexRadioDefault2">
-          <label class="form-check-label" for="flexRadioDefault2">Soy cristiano</label>
+          <input class="form-check-input" type="radio" name="academico" id="tecnico" value="Técnico">
+          <label class="form-check-label" for="tecnico">Técnico</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="religion" id="flexRadioDefault2">
-          <label class="form-check-label" for="flexRadioDefault2">Soy ateo</label>
+          <input class="form-check-input" type="radio" name="academico" id="tecnologo" value="Tecnólogo">
+          <label class="form-check-label" for="tecnologo">Tecnólogo</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="academico" id="profesional" value="Profesional">
+          <label class="form-check-label" for="profesional">Profesional</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="academico" id="maestria" value="Maestría">
+          <label class="form-check-label" for="maestria">Maestría</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="academico" id="doctorado" value="Doctorado">
+          <label class="form-check-label" for="doctorado">Doctorado</label>
         </div>
       </div>
 
+      <div class="mb-3">
+        <p>Medio por el cual desea ser contactado</p>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="sms" id="sms" value="SMS">
+          <label class="form-check-label" for="sms">Mensajes de texto</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="email" id="email" value="Email">
+          <label class="form-check-label" for="email">Mensajes de correo electrónico</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="whatsApp" id="whatsApp" value="WhatsApp">
+          <label class="form-check-label" for="whatsApp">Mensajes de WhatsApp</label>
+        </div>
+      </div>
 
+      <div class="mb-3">
+        <label id="comment-label" for="comment" class="form-label">Comentarios</label>
+        <textarea class="form-control" placeholder="Indique aquí sus comentarios" id="comment" rows="5"></textarea>
+      </div>
 
-
-
-
-
-
-
-
-
-
-
+      <button id="submit" type="submit" class="btn btn-primary">Enviar</button>
 
     </form>
   </div>
